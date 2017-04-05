@@ -1,14 +1,14 @@
-# absorbing-markov-chains
+# Absorbing Markov Chains
 Pure Python 2.7 implementation of solving Absorbing Markov Chains (no dependencies)
 
 ## Motivation
-Matrix operations in pure Python are nothing complex but boring. I saw a lot of code snippets in gists and stackexchange questions but I believe that absense of a solid package is a shame.
+Matrix operations in pure Python are nothing complex but boring. I saw a lot of code snippets in gists and stackexchange questions but I believe that absence of a solid package is a shame.
 
 I guess you're looking for implementation to run in Python 2.7 sandbox. In this case this set of utility functions might save you several hours of coding and bugfixing.
 
 This set of functions can do:
 * Identity matrix generation
-* Matrix substruction
+* Matrix subtraction
 * Matrix multiplications
 * Matrix inverse
 * Matrix reordering (to swap states to bring matrix to canonical form)
@@ -23,9 +23,11 @@ Let an absorbing Markov chain with transition matrix `P` have `t` transient stat
     [ Q R ]
 P = [ 0 I ]
 ```
-where `Q` is squere `t`-by-`t` matrix, P is `t`-by-`r` matrix, `0` is zero-matrix and `I` is identity matrix.
+where `Q` is square `t`-by-`t` matrix, P is `t`-by-`r` matrix, `0` is zero-matrix and `I` is identity matrix.
 
-Given this form absorbing probabilities could be calculated as `B = (I - Q)^-1 * R` 
+### Absorbing probabilities
+If you linearly transform `P` such as `Q` becomes a zero-matrix then what will appear in place of `R` are final absorbing probabilities.
+In other words absorbing probabilities `B` could be calculated as `B = (I - Q)^-1 * R`.
 
 ## Notes
-These set of utility functions assume that `I` is a zero-matrix
+* These set of utility functions assume that `I` is a zero-matrix
