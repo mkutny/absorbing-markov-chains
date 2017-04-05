@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mkutny/absorbing-markov-chains.svg?branch=master)](https://travis-ci.org/mkutny/absorbing-markov-chains)
+
 # Absorbing Markov Chains
 Pure Python 2.7 implementation of solving Absorbing Markov Chains (no dependencies)
 
