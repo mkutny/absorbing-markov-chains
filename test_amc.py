@@ -1,5 +1,5 @@
-# PyTest script
-# run with: 'py.test -s -v test_amc.py'
+# run with: python2.7 test_amc.py
+
 import unittest
 from fractions import Fraction
 import amc
@@ -200,4 +200,5 @@ class AmcTests(unittest.TestCase):
                          )
                          )
 
-
+if __name__ == '__main__':
+    unittest.main()
