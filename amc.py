@@ -15,6 +15,8 @@
 
 # get number of transients states
 # assume absorbing states follow transient states w/o interlieveing
+from fractions import Fraction
+
 def num_of_transients(m):
     if len(m) == 0:
         raise Exception("Can't get transient states of empty matrix")
@@ -126,7 +128,7 @@ def sort(m):
     return m
 
 # normalize matrix `m`
-def normalize(m):
+def normalize(m, use_fractions=False ):
     n = []
     for r in range(len(m)):
         sum = 0
@@ -142,7 +144,10 @@ def normalize(m):
         else:
             for c in range(cols):
                 # FIXME it's strange but python 2.7 does not automatically convert decimals to floats
-                nRow.append(float(m[r][c])/sum)
+                if use_fractions:
+                    nRow.append(Fraction(m[r][c], sum))
+                else:
+                    nRow.append(float(m[r][c])/sum)
         n.append(nRow)
     return n
 
