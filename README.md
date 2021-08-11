@@ -25,7 +25,7 @@ Let an absorbing Markov chain with transition matrix `P` have `t` transient stat
     [ Q R ]
 P = [ 0 I ]
 ```
-where `Q` is square `t`-by-`t` matrix, P is `t`-by-`r` matrix, `0` is zero-matrix and `I` is identity matrix.
+where `Q` is square `t`-by-`t` matrix, `R` is `t`-by-`r` matrix, `0` is zero-matrix and `I` is identity matrix.
 
 ### Absorbing probabilities
 If you linearly transform `P` such as `Q` becomes a zero-matrix then what will appear in place of `R` are final absorbing probabilities.
